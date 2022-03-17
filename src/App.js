@@ -1,24 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 const fileApi = window.files;
 
+const renderFileName = fileName => fileName.split('.vpx')[0];
+
 const renderInput = (setFilePath, loadFileNames) =>
-  <>
-  <span>Enter path to tables:</span>
-  <input type="text" onChange={e => setFilePath(e.target.value)}></input>
-  <button onClick={loadFileNames}>Go</button>
-  </>;
+  <div id="file-path-input">
+    <span>Enter path to tables:</span>
+    <input type="text" onChange={e => setFilePath(e.target.value)}></input>
+    <button onClick={loadFileNames}>Go</button>
+  </div>;
 
 const renderTables = (fileNames) =>
-  <>
-  <h2>Available Tables</h2>
-  <ul>
-    {
-      fileNames.map(f => <li key={f}>{f}</li>)
-    }
-  </ul>
-  </>;
+  <div id="tables">
+    <h2>Available Tables</h2>
+    <div id="tables-grid">
+      {
+        fileNames.map(f => <div className="table" key={f}>{renderFileName(f)}</div>)
+      }
+    </div>
+  </div>;
 
 function App() {
 
