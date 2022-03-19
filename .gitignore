@@ -102,4 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
->>>>>>> 43e347763ca2f4614cee299e0d707eb06a4e75f3
+
+# build
+build/

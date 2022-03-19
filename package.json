@@ -1,11 +1,15 @@
 {
-  "name": "create-react-app",
+  "name": "pinball-frontend",
   "version": "0.1.0",
+  "description": "A simple UI to display & launch your VPX tables",
+  "author": "amatthews91",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -13,12 +17,14 @@
   },
   "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron": "wait-on http://localhost:3000 && electron .",
-    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron\""
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test",
+    "react:eject": "react-scripts eject",
+    "electron:run": "wait-on http://localhost:3000 && electron .",
+    "electron:build": "electron-builder",
+    "pack": "npm run react:build && npm run electron:build",
+    "dev": "concurrently -k \"cross-env BROWSER=none npm run react:start\" \"npm run electron:run\""
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +48,7 @@
     "concurrently": "^7.0.0",
     "cross-env": "^7.0.3",
     "electron": "^17.1.2",
-    "electron-is-dev": "^2.0.0",
+    "electron-builder": "^22.14.13",
     "wait-on": "^6.0.1"
   }
 }
