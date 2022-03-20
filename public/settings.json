@@ -1,3 +1,5 @@
 {
-  "executable": "F:/Pinball/Visual Pinball/VPinballX.exe"
+  "executable": "F:/Pinball/Visual Pinball/VPinballX.exe",
+  "tableDir": "F:/Pinball/Visual Pinball/Tables",
+  "artworkDir": "F:/Pinball/Visual Pinball/Tables/Artwork"
 }
