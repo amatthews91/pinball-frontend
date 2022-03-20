@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import TableCell from './TableCell';
 import './App.css';
 
 const { fileApi, settingsApi } = window;
 
 const settings = settingsApi.getAppSettings();
-const renderFileName = fileName => fileName.split('.vpx')[0];
 
 const renderError = (err) =>
   <div id="error">
@@ -16,7 +16,11 @@ const renderTables = (fileNames, handleClick) =>
     <h2>Available Tables</h2>
     <div id="tables-grid">
       {
-        fileNames.map(f => <div className="table" onClick={() => handleClick(f)} key={f}>{renderFileName(f)}</div>)
+        fileNames.map(f => <TableCell
+          fileName={f}
+          handleClick={handleClick}
+          key={f}
+        />)
       }
     </div>
   </div>;

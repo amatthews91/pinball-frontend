@@ -6,9 +6,10 @@ const isDev = require('electron-is-dev');
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 760,
-    height: 760,
+    width: 950,
+    height: 850,
     webPreferences: {
+      webSecurity: false,
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
     }

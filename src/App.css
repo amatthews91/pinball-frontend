@@ -8,7 +8,7 @@ h2 {
   justify-content: space-around;
 }
 
-.table {
+.table-cell {
   border: 2px solid;
   padding: 5px;
   width: 22vw;
@@ -17,6 +17,11 @@ h2 {
   text-align: center;
 }
 
-.table:hover {
+.table-cell:hover {
   border: 2px solid blue;
+}
+
+.table-artwork {
+  width: 22vw;
+  height: 22vw;
 }
