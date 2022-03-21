@@ -2,8 +2,7 @@ const fs = require('fs');
 const { spawn } = require('child_process');
 const { contextBridge } = require('electron');
 
-// TODO: Load this via fs for prod build
-const settings = require('./settings.json');
+const settings = JSON.parse(fs.readFileSync('./settings.json', 'utf8'));
 const artworkFiles = [];
 
 function getAppSettings() {
